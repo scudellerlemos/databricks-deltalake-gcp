@@ -1,6 +1,6 @@
-# Data Lake no Google Cloud Platform (GCP)
+# 🌊 Data Lake no Google Cloud Platform (GCP)
 
-## Visão Geral
+## 🎯 Visão Geral
 
 Este projeto implementa uma solução moderna de Data Lake na Google Cloud Platform (GCP), integrando as seguintes tecnologias:
 
@@ -9,36 +9,36 @@ Este projeto implementa uma solução moderna de Data Lake na Google Cloud Platf
 - **Databricks**: Como plataforma unificada de processamento
 - **GitHub Actions**: Para automação de CI/CD e DevOps
 
-## Arquitetura da Solução
+## 📐 Arquitetura da Solução
 
 [Inserir diagrama da arquitetura aqui]
 
-## Componentes Principais
+## 🧩 Componentes Principais
 
-### Google Cloud Storage (GCS)
+### 💾 Google Cloud Storage (GCS)
 - Armazenamento escalável e durável na nuvem
 - Otimizado para tabelas Delta Lake
 - Suporte a dados estruturados e não-estruturados
 
-### Databricks
+### 🚀 Databricks
 - Plataforma unificada para processamento de big data
 - Integração nativa com Delta Lake
 - Ambiente colaborativo com notebooks interativos
 
-### GitHub Actions
+### ⚡ GitHub Actions
 - Pipeline de CI/CD automatizada
 - Testes e validações integradas
 - Gestão completa do ciclo de vida do código
 
-## Gestão de Código
+## 📝 Gestão de Código
 
-### Estratégia de Branches
+### 🌳 Estratégia de Branches
 - **main-prd**: Ambiente de produção
 - **dev**: Desenvolvimento
 - **release**: Preparação de versões
 - **feature/**: Desenvolvimento de funcionalidades
 
-### Fluxo de Desenvolvimento
+### 🔄 Fluxo de Desenvolvimento
 1. Criação de feature branch
 2. Desenvolvimento e code review
 3. Merge para dev
@@ -46,44 +46,44 @@ Este projeto implementa uma solução moderna de Data Lake na Google Cloud Platf
 5. Testes e validação
 6. Deploy para produção
 
-## Arquitetura de Dados
+## 📊 Arquitetura de Dados
 
 Nossa solução implementa o Modelo Medallion, organizando os dados em camadas progressivas de refinamento:
 
-### Camada Stage (Landing)
+### 🛬 Camada Stage (Landing)
 - Ponto inicial de ingestão
 - Validações automáticas básicas
 - Retenção controlada
 - Entrada do pipeline de dados
 
-### Camada Bronze (Raw)
+### 🥉 Camada Bronze (Raw)
 - Dados brutos preservados
 - Histórico completo
 - Rastreabilidade garantida
 - Base para reprocessamento
 
-### Camada Silver (Trusted)
+### 🥈 Camada Silver (Trusted)
 - Dados normalizados
 - Remoção de duplicidades
 - Formatos padronizados
 - Qualidade validada
 
-### Camada Gold (Business)
+### 🥇 Camada Gold (Business)
 - Dados analíticos prontos
 - Modelos dimensionais
 - Métricas de negócio
 - Otimização para consultas
 
-### Linhagem de Dados
+### 🔍 Linhagem de Dados
 - Rastreamento completo da origem ao destino dos dados
 - Mapeamento de dependências entre datasets
 - Visualização do fluxo de transformações
 - Impacto análise para mudanças
 - Auditoria de transformações
 
-## Principais Benefícios
+## ⭐ Principais Benefícios
 
-### Governança
+### 🔒 Governança
 - Rastreabilidade completa
 - Segurança em camadas
 - Controle de acesso granular
@@ -92,7 +92,7 @@ Nossa solução implementa o Modelo Medallion, organizando os dados em camadas p
 - Auditoria de transformações
 
 
-### Confiabilidade
+### 🛡️ Confiabilidade
 - Propriedades ACID garantidas:
   - **Atomicidade**: Todas as operações são completadas por inteiro ou falham completamente
   - **Consistência**: Dados permanecem válidos após cada transação
@@ -101,17 +101,17 @@ Nossa solução implementa o Modelo Medallion, organizando os dados em camadas p
 - Versionamento de dados
 - Recuperação eficiente
 
-### Escalabilidade
+### 📈 Escalabilidade
 - Processamento distribuído
 - Elasticidade automática
 - Gestão otimizada de recursos
 
-### Operação
+### ⚙️ Operação
 - Automação end-to-end
 - CI/CD integrado
 - Monitoramento contínuo
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 ![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
@@ -120,7 +120,7 @@ Nossa solução implementa o Modelo Medallion, organizando os dados em camadas p
 ![Delta Lake](https://img.shields.io/badge/Delta_Lake-00ADD8?style=for-the-badge&logo=delta&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sql&logoColor=white)
 
-## Agradecimentos e Contribuições
+## 🤝 Agradecimentos e Contribuições
 
 Agradeço por explorar este projeto! Se você tiver interesse em contribuir, siga os passos abaixo:
 
