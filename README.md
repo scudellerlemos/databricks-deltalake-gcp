@@ -35,7 +35,7 @@ Este projeto implementa uma solução moderna de Data Lake na Google Cloud Platf
 ### 🌳 Estratégia de Branches
 - **main-prd**: Ambiente de produção
 - **dev**: Desenvolvimento
-- **release**: Preparação de versões
+- **release/**: Area de pre-testes e validações
 - **feature/**: Desenvolvimento de funcionalidades
 
 ### 🔄 Fluxo de Desenvolvimento
