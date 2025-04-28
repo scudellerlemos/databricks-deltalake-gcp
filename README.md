@@ -1,4 +1,4 @@
-# Projeto Data Lake com Delta Lake no Google Cloud Platform (GCP)
+# Data Lake com Delta no Google Cloud Platform (GCP)
 
 ## Visão Geral
 
