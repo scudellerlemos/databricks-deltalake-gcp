@@ -2,78 +2,133 @@
 
 ## Visão Geral
 
-Este projeto implementa uma solução moderna de Data Lake na nuvem **Google Cloud Platform (GCP)**, combinando as capacidades do **Delta Lake** para gerenciamento de dados com a poderosa plataforma de processamento **Databricks**. A solução é complementada com práticas DevOps através de **CI/CD** automatizado via **GitHub Actions**.
+Este projeto implementa uma solução moderna de Data Lake na Google Cloud Platform (GCP), integrando as seguintes tecnologias:
 
-## Arquitetura
+- **[Em Definição]**: Extração e cópia das fontes de dados [API e Banco de dados transacionais]
+- **Delta Lake**: Para gerenciamento robusto e confiável dos dados
+- **Databricks**: Como plataforma unificada de processamento
+- **GitHub Actions**: Para automação de CI/CD e DevOps
+
+## Arquitetura da Solução
 
 [Inserir diagrama da arquitetura aqui]
 
 ## Componentes Principais
 
-- **Google Cloud Storage (GCS)**
-  - Sistema de armazenamento escalável e durável
-  - Hospedagem otimizada para tabelas Delta
-  - Gerenciamento eficiente de dados estruturados e não-estruturados
+### Google Cloud Storage (GCS)
+- Armazenamento escalável e durável na nuvem
+- Otimizado para tabelas Delta Lake
+- Suporte a dados estruturados e não-estruturados
 
-- **Databricks**
-  - Ambiente unificado para processamento de big data
-  - Suporte nativo ao Delta Lake
-  - Notebooks colaborativos para análise e desenvolvimento
+### Databricks
+- Plataforma unificada para processamento de big data
+- Integração nativa com Delta Lake
+- Ambiente colaborativo com notebooks interativos
 
-- **GitHub Actions**
-  - Automação completa do ciclo de vida do código
-  - Pipeline de CI/CD personalizada
-  - Garantia de qualidade através de testes automatizados
+### GitHub Actions
+- Pipeline de CI/CD automatizada
+- Testes e validações integradas
+- Gestão completa do ciclo de vida do código
 
-## Arquitetura de Dados (Modelo Medallion)
+## Gestão de Código
 
-Nossa arquitetura segue o conceito Medallion, proporcionando uma evolução controlada dos dados através de camadas bem definidas:
+### Estratégia de Branches
+- **main-prd**: Ambiente de produção
+- **dev**: Desenvolvimento
+- **release**: Preparação de versões
+- **feature/**: Desenvolvimento de funcionalidades
 
-### 1. Stage (Landing Zone)
-- Zona de aterrissagem inicial dos dados
-- Validações preliminares automatizadas
-- Retenção temporária controlada
-- Gateway de entrada do pipeline
+### Fluxo de Desenvolvimento
+1. Criação de feature branch
+2. Desenvolvimento e code review
+3. Merge para dev
+4. Criação de release quando necessário
+5. Testes e validação
+6. Deploy para produção
 
-### 2. Bronze (Raw Data)
-- Preservação dos dados brutos originais
-- Histórico completo e imutável
-- Base para auditoria e reprocessamento
-- Garantia de rastreabilidade
+## Arquitetura de Dados
 
-### 3. Silver (Trusted Data)
-- Dados estruturados e normalizados
-- Eliminação de redundâncias
-- Padronização de formatos
-- Controles de qualidade rigorosos
-- Garantia de consistência
+Nossa solução implementa o Modelo Medallion, organizando os dados em camadas progressivas de refinamento:
 
-### 4. Gold (Business Layer)
-- Camada analítica otimizada
-- Modelos dimensionais refinados
-- KPIs e métricas de negócio
-- Visões agregadas prontas para consumo
-- Performance otimizada para consultas
+### Camada Stage (Landing)
+- Ponto inicial de ingestão
+- Validações automáticas básicas
+- Retenção controlada
+- Entrada do pipeline de dados
 
-## Benefícios da Arquitetura
+### Camada Bronze (Raw)
+- Dados brutos preservados
+- Histórico completo
+- Rastreabilidade garantida
+- Base para reprocessamento
 
-1. **Governança de Dados**
-   - Rastreabilidade end-to-end
-   - Políticas de segurança em camadas
-   - Controle granular de acesso
+### Camada Silver (Trusted)
+- Dados normalizados
+- Remoção de duplicidades
+- Formatos padronizados
+- Qualidade validada
 
-2. **Confiabilidade**
-   - Transações ACID garantidas pelo Delta Lake
-   - Versionamento automático de dados
-   - Recuperação simplificada
+### Camada Gold (Business)
+- Dados analíticos prontos
+- Modelos dimensionais
+- Métricas de negócio
+- Otimização para consultas
 
-3. **Escalabilidade**
-   - Processamento distribuído eficiente
-   - Elasticidade automática
-   - Otimização de custos
+### Linhagem de Dados
+- Rastreamento completo da origem ao destino dos dados
+- Mapeamento de dependências entre datasets
+- Visualização do fluxo de transformações
+- Impacto análise para mudanças
+- Auditoria de transformações
 
-4. **Agilidade Operacional**
-   - Automação de ponta a ponta
-   - Integração contínua
-   - Deploy automatizado
-   - Monitoramento em tempo real
+## Principais Benefícios
+
+### Governança
+- Rastreabilidade completa
+- Segurança em camadas
+- Controle de acesso granular
+- Linhagem de dados fim-a-fim
+- Mapeamento de dependências
+- Auditoria de transformações
+
+
+### Confiabilidade
+- Propriedades ACID garantidas:
+  - **Atomicidade**: Todas as operações são completadas por inteiro ou falham completamente
+  - **Consistência**: Dados permanecem válidos após cada transação
+  - **Isolamento**: Transações concorrentes não interferem entre si
+  - **Durabilidade**: Dados persistem mesmo após falhas do sistema
+- Versionamento de dados
+- Recuperação eficiente
+
+### Escalabilidade
+- Processamento distribuído
+- Elasticidade automática
+- Gestão otimizada de recursos
+
+### Operação
+- Automação end-to-end
+- CI/CD integrado
+- Monitoramento contínuo
+
+## Tecnologias Utilizadas
+
+![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Delta Lake](https://img.shields.io/badge/Delta_Lake-00ADD8?style=for-the-badge&logo=delta&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sql&logoColor=white)
+
+## Agradecimentos e Contribuições
+
+Agradeço por explorar este projeto! Se você tiver interesse em contribuir, siga os passos abaixo:
+
+1. Faça um fork do repositório clicando no botão "Fork" no canto superior direito da página
+2. Clone o fork para sua máquina local usando `git clone https://github.com/seu-usuario/nome-do-repo.git`
+3. Crie uma branch para sua feature: `git checkout -b feature/sua-feature`
+4. Faça suas alterações e commit: `git commit -m 'Adiciona nova feature'`
+5. Push para seu fork: `git push origin feature/sua-feature`
+6. Abra um Pull Request para este repositório
+
+Todas as contribuições serão cuidadosamente avaliadas e são muito bem-vindas para o crescimento desta solução.
